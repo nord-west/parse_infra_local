@@ -16,8 +16,6 @@ services:
       - MONGODB_DATABASE=parse
       - MONGODB_PASSWORD=parse
       - MONGODB_ROOT_PASSWORD=parse
-      # - MONGO_INITDB_ROOT_USERNAME=root
-      # - MONGO_INITDB_ROOT_PASSWORD=parse
     
   parse:
     container_name: parse-server
@@ -33,7 +31,7 @@ services:
     environment:
       - PARSE_DATABASE_HOST=mongodb
       - PARSE_DATABASE_PORT_NUMBER=27017
-      - PARSE_DATABASE_USER=bn_parse
+      - PARSE_DATABASE_USER=parse
       - PARSE_DATABASE_NAME=parse
       - PARSE_DATABASE_PASSWORD=parse
 
