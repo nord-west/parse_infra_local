@@ -47,21 +47,6 @@ services:
     networks: 
       - parse-network
 
-  mongo-express:
-    container_name: mongo-express
-    image: mongo-express:latest
-    ports: 
-      - '8081:8081'
-    depends_on:
-      - mongodb
-    networks: 
-      - parse-network
-    environment:
-      - ME_CONFIG_OPTIONS_EDITORTHEME=ambiance
-      - ME_CONFIG_MONGODB_SERVER=mongodb
-      - ME_CONFIG_BASICAUTH_USERNAME=root
-      - ME_CONFIG_BASICAUTH_PASSWORD=parse
-
 volumes:
   mongo-data:
     driver: local
