@@ -7,3 +7,9 @@ Docker Compose de uma infraestrutura local do Parse Platform.
 ```
 docker-compose up
 ```
+
+### - *ACCESS*: 
+[localhost:4040](http://localhost:4040)
+> user: user
+>
+> password: bitnami

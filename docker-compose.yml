@@ -48,6 +48,11 @@ services:
       - parse-network
     environment:
       - PARSE_DASHBOARD_PARSE_HOST=localhost
+      - PARSE_DASHBOARD_MASTER_KEY=masterkey
+      - PARSE_DASHBOARD_APP_ID=appid
+      - PARSE_DASHBOARD_APP_NAME=app
+      - PARSE_DASHBOARD_USER_ID=parse
+      - PARSE_DASHBOARD_USER_PASSWORD=parse
 
 volumes:
   mongo-data:
