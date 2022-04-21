@@ -46,6 +46,8 @@ services:
       - parse
     networks: 
       - parse-network
+    environment:
+      - PARSE_DASHBOARD_PARSE_HOST=localhost
 
 volumes:
   mongo-data:
