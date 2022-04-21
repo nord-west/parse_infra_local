@@ -7,7 +7,7 @@ services:
     ports:
       - '27017:27017'
     volumes:
-      - './mongo_data:/bitnami/mongodb'
+      - 'mongo-data:/bitnami/mongodb'
     networks: 
       - parse-network
     environment:
@@ -18,14 +18,14 @@ services:
       - MONGODB_ROOT_PASSWORD=parse
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=parse
-
+    
   parse:
     container_name: parse-server
     image: docker.io/bitnami/parse:4
     ports:
       - '1337:1337'
     volumes:
-      - './parse_data:/bitnami/parse'
+      - 'parse-data:/bitnami/parse'
     depends_on:
       - mongodb
     networks: 
@@ -43,7 +43,7 @@ services:
     ports:
       - '4040:4040'
     volumes:
-      - './parse_dashboard_data:/bitnami'
+      - 'parse-dashboard-data:/bitnami'
     depends_on:
       - parse
     networks: 
@@ -65,11 +65,11 @@ services:
       - ME_CONFIG_BASICAUTH_PASSWORD=parse
 
 volumes:
-  mongo_data:
+  mongo-data:
     driver: local
-  parse_data:
+  parse-data:
     driver: local
-  parse_dashboard_data:
+  parse-dashboard-data:
     driver: local
 
 networks:
