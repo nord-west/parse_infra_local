@@ -34,8 +34,8 @@ services:
       - PARSE_DATABASE_HOST=mongodb
       - PARSE_DATABASE_PORT_NUMBER=27017
       - PARSE_DATABASE_USER=bn_parse
-      - PARSE_DATABASE_NAME=bitnami_parse
-      - PARSE_DATABASE_PASSWORD=bitnami123
+      - PARSE_DATABASE_NAME=parse
+      - PARSE_DATABASE_PASSWORD=parse
 
   parse-dashboard:
     container_name: parse-dashboard
@@ -49,20 +49,20 @@ services:
     networks: 
       - parse-network
 
-  # mongo-express:
-  #   container_name: mongo-express
-  #   image: mongo-express:latest
-  #   ports: 
-  #     - '8081:8081'
-  #   depends_on:
-  #     - mongodb
-  #   networks: 
-  #     - parse-network
-  #   environment:
-  #     - ME_CONFIG_OPTIONS_EDITORTHEME=ambiance
-  #     - ME_CONFIG_MONGODB_SERVER=mongodb
-  #     - ME_CONFIG_BASICAUTH_USERNAME=root
-  #     - ME_CONFIG_BASICAUTH_PASSWORD=parse
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express:latest
+    ports: 
+      - '8081:8081'
+    depends_on:
+      - mongodb
+    networks: 
+      - parse-network
+    environment:
+      - ME_CONFIG_OPTIONS_EDITORTHEME=ambiance
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_BASICAUTH_USERNAME=root
+      - ME_CONFIG_BASICAUTH_PASSWORD=parse
 
 volumes:
   mongo_data:
