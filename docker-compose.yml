@@ -16,8 +16,8 @@ services:
       - MONGODB_DATABASE=parse
       - MONGODB_PASSWORD=parse
       - MONGODB_ROOT_PASSWORD=parse
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=parse
+      # - MONGO_INITDB_ROOT_USERNAME=root
+      # - MONGO_INITDB_ROOT_PASSWORD=parse
     
   parse:
     container_name: parse-server
